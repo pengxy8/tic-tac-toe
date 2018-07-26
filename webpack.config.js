@@ -6,6 +6,7 @@ module.exports = {
     mode: 'development',
     entry: './src/main.js',
     watch: true,
+    devtool: 'source-map',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'index.js',
@@ -46,9 +47,6 @@ module.exports = {
         ],
     },
     plugins: [
-        new webpack.SourceMapDevToolPlugin({
-            filename: '[name].map',
-        }),
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: './src/index.html',
